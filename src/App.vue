@@ -1,17 +1,13 @@
 <template>
-  <div class="container">
-    <List />
-    <Search />
-  </div>
+  <FunList></FunList>
 </template>
 
 <script>
-import Search from "./components/List.vue";
-import List from "./components/Search.vue";
+import FunList from "./components/FunList.vue";
 
 export default {
   name: "App",
-  components: { Search, List },
+  components: { FunList },
 };
 </script>
 
