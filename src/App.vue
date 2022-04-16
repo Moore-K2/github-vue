@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <FunList title="美食" :funList="foods">
+    <!-- <FunList title="美食" :funList="foods">
       <div class="img">
         <img
           src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%3A%2F%2Fdingyue.ws.126.net%2F2021%2F0827%2Fe47e83b7j00qyi8hf005md200u000m5g00u000m5.jpg%26thumbnail%3D650x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652686524&t=8f5517d1380b0a522ea764c0d0c789a4"
@@ -20,16 +20,18 @@
           {{ item }}
         </li>
       </ul>
-    </FunList>
+    </FunList> -->
+    <count></count>
   </div>
 </template>
 
 <script>
 import FunList from "./components/FunList.vue";
+import Count from "./components/Count.vue";
 
 export default {
   name: "App",
-  components: { FunList },
+  components: { FunList, Count },
   data() {
     return {
       foods: ["红烧鲈鱼", "鱼香肉丝", "麻辣烧烤"],
@@ -43,7 +45,6 @@ export default {
 <style>
 .container {
   display: flex;
-  /* justify-content: space-around; */
   justify-content: space-evenly;
 }
 img {
