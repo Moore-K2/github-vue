@@ -1,28 +1,10 @@
 <template>
-  <div class="fun-container">
-    <div class="demo">
-      <h3>美食xxx</h3>
-      <ul>
-        <li>红烧鲈鱼xxx</li>
-        <li>鱼香肉丝xxx</li>
-        <li>麻辣烧烤xxx</li>
-      </ul>
-    </div>
-    <div class="demo">
-      <h3>电影xxx</h3>
-      <ul>
-        <li>欢乐喜剧人xxx</li>
-        <li>成家班xxx</li>
-        <li>末日来临xxx</li>
-      </ul>
-    </div>
-    <div class="demo">
-      <h3>运动xxx</h3>
-      <ul>
-        <li>打篮球xxx</li>
-        <li>踢足球xxx</li>
-        <li>玩桌游xxx</li>
-      </ul>
+  <div>
+    <div class="category">
+      <h3>{{ title }}</h3>
+      <!-- 定义插槽 -->
+      <slot>我是插槽1。组件使用者没有传数据时，出现</slot>
+      <!-- <slot>我是插槽2。组件使用者没有传数据时，出现</slot> -->
     </div>
   </div>
 </template>
@@ -30,23 +12,22 @@
 <script>
 export default {
   name: "FunList",
+  props: ["title"],
 };
 </script>
 
 <style>
-.fun-container{
-    display: flex;
-    /* justify-content: space-around; */
-     justify-content: space-evenly;
+.category {
+  /* 开启bfc.防止上下margin重叠; */
+  overflow: hidden;
+  background-color: antiquewhite;
+  width: 200px;
+  height: 300px;
 }
-.demo{
-    background-color:antiquewhite;
-    width: 200px;
-    height: 300px;
-}
-.demo h3{
-    width: 100%;
-    background-color: aqua;
-    text-align: center;
+h3 {
+  margin-top: 20px;
+  width: 100%;
+  background-color: aqua;
+  text-align: center;
 }
 </style>
