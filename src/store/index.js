@@ -37,7 +37,7 @@ const mutations = {
         },
     }
     //保存具体的数据
-const state = { sum: 98, }
+const state = { sum: 98, school: "CDUT", name: "Moore" }
     // 当state中的数据需要经过加工后再使用时，可以使用getters加工。
 const getters = {
     bigSum(state) {

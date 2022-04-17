@@ -34,9 +34,9 @@ export default {
   components: { FunList, Count },
   data() {
     return {
-      foods: ["红烧鲈鱼", "鱼香肉丝", "麻辣烧烤"],
-      movies: ["欢乐喜剧人", "成家班", "末日来临"],
-      sports: ["打篮球", "踢足球", "玩桌游"],
+      // foods: ["红烧鲈鱼", "鱼香肉丝", "麻辣烧烤"],
+      // movies: ["欢乐喜剧人", "成家班", "末日来临"],
+      // sports: ["打篮球", "踢足球", "玩桌游"],
     };
   },
 };

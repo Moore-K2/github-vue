@@ -3,6 +3,8 @@
 import Vue from 'vue'
 // 1 引入App组件，他是所有组件的父组件  2 注册，3 应用
 import App from './App.vue'
+// 引入store
+import store from "./store/index.js"
 //关闭vue的生成提示
 Vue.config.productionTip = false
 
@@ -12,7 +14,9 @@ new Vue({
     render: h => h(App),
     beforeCreate() {
         Vue.prototype.$bus = this
-    }
+    },
+    // 创建vm时配置store
+    store
 
 }).$mount('#app')
 
