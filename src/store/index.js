@@ -35,9 +35,21 @@ const mutations = {
         JIAN(state, value) {
             state.sum -= value
         },
+        ADD_PERSON(state, personObj) {
+            console.log("ADD_PERSON被调用了")
+            state.personList.unshift(personObj)
+        }
     }
     //保存具体的数据
-const state = { sum: 98, school: "CDUT", name: "Moore" }
+const state = {
+        sum: 0,
+        school: "CDUT",
+        name: "Moore",
+        personList: [{ id: "001", name: '张三' },
+            { id: "002", name: '李四' },
+            { id: "003", name: '王五' },
+        ]
+    }
     // 当state中的数据需要经过加工后再使用时，可以使用getters加工。
 const getters = {
     bigSum(state) {

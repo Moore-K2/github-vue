@@ -21,17 +21,20 @@
         </li>
       </ul>
     </FunList> -->
-    <count></count>
+    <Count></Count>
+    <hr />
+    <Person></Person>
   </div>
 </template>
 
 <script>
 import FunList from "./components/FunList.vue";
 import Count from "./components/Count.vue";
+import Person from "./components/Person.vue";
 
 export default {
   name: "App",
-  components: { FunList, Count },
+  components: { FunList, Count, Person },
   data() {
     return {
       // foods: ["红烧鲈鱼", "鱼香肉丝", "麻辣烧烤"],
@@ -44,13 +47,16 @@ export default {
 
 <style>
 .container {
-  display: flex;
-  justify-content: space-evenly;
+  width: 400px;
+  margin: 0 auto;
+  /* display: flex;
+  justify-content: space-evenly; */
 }
+/* 
 img {
   width: 100%;
 }
 video {
   width: 100%;
-}
+} */
 </style>

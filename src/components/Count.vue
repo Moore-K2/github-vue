@@ -3,6 +3,10 @@
     <h1>当前求和为：{{ sum }}</h1>
     <h2>当前和的10倍为：{{ bigSum }}</h2>
     <h3>我是{{ name }}，在{{ school }}读书</h3>
+    <h2 style="color: red">
+      <!-- Person组件中person的人数为：{{ $store.state.personList.length }} -->
+      Person组件中person的人数为：{{ personList.length }}
+    </h2>
     <div class="count">
       <!-- 加.number会将v-model捕获的n值强制转换为数字 -->
       <select v-model.number="n">
@@ -66,8 +70,8 @@ export default {
     // 2 形式2 用...mapState生成计算属性（对象写法）
     // ...mapState({ sum: "sum", name: "name", school: "school" }),
 
-    // 3 数组写法
-    ...mapState(["sum", "name", "school"]),
+    // 3 数组写法 mapState相当于调了 $store.state.personList
+    ...mapState(["sum", "name", "school", "personList"]),
     ...mapGetters(["bigSum"]),
   },
   mounted() {

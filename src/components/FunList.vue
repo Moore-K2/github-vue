@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .category {
   /* 开启bfc.防止上下margin重叠; */
   overflow: hidden;
