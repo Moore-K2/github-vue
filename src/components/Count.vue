@@ -42,6 +42,7 @@ export default {
     //   this.$store.commit("JIAN", this.n);
     // },
     // 数组写法，要保证名字相同且<绑定事件>的时候就传参...mapActions(["JIA","JIAN"]),
+    // increment:"JIA" <==>  increment(){commit("JIA",n)}
     ...mapMutations({ increment: "JIA", decrement: "JIAN" }),
 
     // incrementOdd() {

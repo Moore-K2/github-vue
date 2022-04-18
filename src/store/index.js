@@ -5,15 +5,10 @@ import Vuex from "vuex"
 // 应用Vuex
 Vue.use(Vuex)
 
+//求和相关的配置
+
 //创建动作对象，相应组件中用户的动作
 const actions = {
-    jia(context, value) {
-        console.log("actions中的jia被调用了", value)
-        context.commit("JIA", value)
-    },
-    jian(context, value) {
-        context.commit("JIAN", value)
-    },
     jiaodd(context, value) {
         if (context.state.sum % 2) { context.commit("JIA", value) }
     },
@@ -25,12 +20,11 @@ const actions = {
     }
 }
 
-//创建mutations对象，修改state中的数据
+//创建mutations对象，修改state中的数据、与devtools进行连接
 const mutations = {
         JIA(state, value) {
             console.log("mutations中的JIA被调用了", value)
             state.sum += value
-
         },
         JIAN(state, value) {
             state.sum -= value
