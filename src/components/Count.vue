@@ -5,7 +5,7 @@
     <h3>我是{{ name }}，在{{ school }}读书</h3>
     <h2 style="color: red">
       <!-- Person组件中person的人数为：{{ $store.state.personList.length }} -->
-      Person组件中person的人数为：???
+      Person组件中person的人数为：{{ personList.length }}
     </h2>
     <div class="count">
       <!-- 加.number会将v-model捕获的n值强制转换为数字 -->
@@ -84,10 +84,12 @@ export default {
 
     // 3 数组写法 mapState相当于调了 $store.state.personList
     ...mapState("countAbout", ["sum", "name", "school"]),
+    // 拿personList的人数
+    ...mapState("personAbout", ["personList"]),
     ...mapGetters("countAbout", ["bigSum"]),
   },
   mounted() {
-    console.log("####", this);
+    console.log("####count", this);
   },
 };
 </script>

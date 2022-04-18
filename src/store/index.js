@@ -39,6 +39,7 @@ const countAbout = {
     },
     // 当state中的数据需要经过加工后再使用时，可以使用getters加工。
     getters: {
+        // 这儿的state是局部的state
         bigSum(state) {
             return state.sum * 10
         }
@@ -56,14 +57,25 @@ const personAbout = {
             { id: "003", name: '王五' },
         ]
     },
-    actions: {},
+    actions: {
+        addPersonWang(context, personObj) {
+            if (context.personObj.name.indexOf('王') == 0) {
+                context.commit("ADD_PERSON", personObj)
+            }
+        }
+    },
     mutations: {
         ADD_PERSON(state, personObj) {
             console.log("ADD_PERSON被调用了")
             state.personList.unshift(personObj)
         }
     },
-    getters: {}
+    getters: {
+        // 这儿的state是局部personABout的state
+        firstPersonName(state) {
+            return state.personList[0].name
+        }
+    }
 }
 
 export default new Vuex.Store({
